@@ -665,3 +665,17 @@ section {
         max-width: 250px;
     }
 }
+
+.founders-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .founders-grid {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
