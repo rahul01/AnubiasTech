@@ -144,13 +144,6 @@ The website is ready for deployment to any web hosting service:
 3. Point your domain to the `html/index.html` file
 4. Configure any necessary redirects or server settings
 
-## 📞 Contact Information
-
-For questions about this website implementation:
-
-- Email: hello@anubiastech.com
-- Website: https://www.anubiastech.com
-
 ## 📄 License
 
 This project is created for AnubiasTech. All rights reserved.
