@@ -366,6 +366,16 @@ section {
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+.navteq-portfolio .project-icon {
+    display: block;
+    margin: 0 auto;
+    max-width: 180px;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 .project-icon {
     width: 74px;
     height: 74px;
