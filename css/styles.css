@@ -437,6 +437,18 @@ section {
     transition: background-color 0.3s ease;
 }
 
+ .contact-icon i {
+     font-size: 1.5em;
+}
+
+.fas.fa-phone-alt {
+    transform: scaleX(-1);
+}
+
+.fab.fa-whatsapp {
+    font-size: 2em;
+ }
+
 .contact-icon:hover {
     background-color: var(--secondary-blue);
 }
@@ -665,17 +677,65 @@ section {
         max-width: 250px;
     }
 }
+.founders-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.founder-card {
+    width: calc(33.33% - 20px);
+    flex-grow: 1;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founder-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.founder-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.founder-card h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gray-dark);
+    margin-bottom: 15px;
+}
+
+.founder-card p {
+    font-size: 1rem;
+    color: var(--gray-medium);
+    line-height: 1.6;
+}
 
 .founders-grid {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 @media (max-width: 768px) {
     .founders-grid {
         flex-wrap: wrap;
         flex-direction: column;
+    }
+    .founder-card {
+        width: 90%; /* Full width for smaller screens */
     }
 }
