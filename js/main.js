@@ -81,33 +81,6 @@ window.addEventListener('scroll', function() {
     });
 });
 
-// Form Submission Handler
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Basic validation
-    if (!name || !email || !subject || !message) {
-        showNotification('Please fill in all fields.', 'error');
-        return;
-    }
-    
-    if (!isValidEmail(email)) {
-        showNotification('Please enter a valid email address.', 'error');
-        return;
-    }
-    
-    // Simulate form submission (replace with actual form submission logic)
-    showNotification('Thank you for your message! We\'ll get back to you soon.', 'success');
-    this.reset();
-});
-
 // Email validation helper function
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -311,6 +284,31 @@ window.addEventListener('scroll', function() {
         const rate = scrolled * -0.5;
         heroIcon.style.transform = `translateY(${rate}px)`;
     }
+});
+
+// --- Theme (Dark/Light) Toggle with FAB ---
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggleButton = document.getElementById('themeToggleButton');
+    const themeIcon = document.getElementById('themeIcon');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const storedTheme = localStorage.getItem('anubias-theme');
+    
+    function applyTheme(isDark) {
+        document.body.classList.toggle('dark-mode', isDark);
+        themeIcon.classList.toggle('fa-moon', !isDark);
+        themeIcon.classList.toggle('fa-sun', isDark);
+        themeToggleButton.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    // Set initial theme
+    let isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
+    applyTheme(isDark);
+
+    themeToggleButton && themeToggleButton.addEventListener('click', function() {
+        isDark = !document.body.classList.contains('dark-mode');
+        applyTheme(isDark);
+        localStorage.setItem('anubias-theme', isDark ? 'dark' : 'light');
+    });
 });
 
 console.log('AnubiasTech website loaded successfully!');
