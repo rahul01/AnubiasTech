@@ -191,8 +191,7 @@ const observerOptions = {
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('animate-in');
         }
     });
 }, observerOptions);
@@ -202,9 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const animateElements = document.querySelectorAll('.service-card, .portfolio-item, .stat-item');
     
     animateElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        element.classList.add('animate-on-scroll');
         observer.observe(element);
     });
 });

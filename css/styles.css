@@ -304,14 +304,14 @@ section {
     background-color: var(--white);
     padding: 40px 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .service-icon {
@@ -352,7 +352,7 @@ section {
 .portfolio-item {
     background-color: var(--white);
     border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     padding: 30px 20px;
     display: flex;
     gap: 20px;
@@ -362,8 +362,8 @@ section {
 }
 
 .portfolio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .navteq-portfolio .project-icon {
@@ -648,7 +648,13 @@ body.dark-mode .contact-form,
 body.dark-mode .stat-item {
     background-color: #23283a !important;
     color: #eef1f6 !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+}
+body.dark-mode .service-card:hover,
+body.dark-mode .portfolio-item:hover,
+body.dark-mode .founder-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.9) !important;
 }
 body.dark-mode .project-icon,
 body.dark-mode .founder-card img {
@@ -730,6 +736,30 @@ body.dark-mode .nav-menu {
 }
 body.dark-mode .hamburger .bar {
     background-color: #eef1f6 !important;
+}
+
+/* Scroll Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.service-card.animate-in:hover,
+.portfolio-item.animate-in:hover,
+.founder-card.animate-in:hover {
+    transform: translateY(-5px) !important;
+}
+
+body.dark-mode .service-card.animate-in:hover,
+body.dark-mode .portfolio-item.animate-in:hover,
+body.dark-mode .founder-card.animate-in:hover {
+    transform: translateY(-5px) !important;
 }
 
 /* FAB - Floating Action Button for Theme Toggle */
